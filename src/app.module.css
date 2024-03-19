@@ -12,3 +12,8 @@
   display: flex;
   gap: 1rem;
 }
+
+.buttons {
+  display: flex;
+  gap: 2rem
+}

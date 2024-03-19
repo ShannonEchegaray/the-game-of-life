@@ -21,6 +21,12 @@ const App: React.FC = () => {
   const handlePlay = () => {
     setPhase("PLAYING");
   }
+
+  const handleReset = () => {
+    setPhase("SETUP");
+    setGenerations(0);
+    setBoard(createNewBoard());
+  }
   
   useEffect(() => {
     const handleUpdate = () => {
@@ -60,7 +66,7 @@ const App: React.FC = () => {
   return (
     <main className={styles.main}>
       <div className={styles.title}>
-        <p>{(phase === "PLAYING" || phase === "FINISHED") && generation}</p>
+        <p>{(phase !== "SETUP") && generation}</p>
         <p>{phase === "PLAYING" && "En juego"}</p>
         <p>{phase === "FINISHED" && "Finalizado"}</p>
       </div>
@@ -82,7 +88,10 @@ const App: React.FC = () => {
           })
         }
       </div>
-      <button onClick={handlePlay}>Iniciar</button>
+      <div className={styles.buttons}>
+        <button onClick={handlePlay}>Iniciar</button>
+        <button onClick={handleReset}>Reiniciar</button>
+      </div>
     </main>
   )
 }
