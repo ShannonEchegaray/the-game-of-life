@@ -89,8 +89,8 @@ const App: React.FC = () => {
         }
       </div>
       <div className={styles.buttons}>
-        <button onClick={handlePlay}>Iniciar</button>
-        <button onClick={handleReset}>Reiniciar</button>
+        <button className={styles.button} onClick={handlePlay}>Iniciar</button>
+        <button className={styles.button} onClick={handleReset}>Reiniciar</button>
       </div>
     </main>
   )

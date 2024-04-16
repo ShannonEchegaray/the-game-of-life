@@ -17,3 +17,7 @@
   display: flex;
   gap: 2rem
 }
+
+.button {
+  padding: .2rem .5rem;
+}
